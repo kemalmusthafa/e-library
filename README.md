@@ -1,13 +1,15 @@
-Installation
+**Installation**
 
 Clone the repository:
 
 git clone https://github.com/kemalmusthafa/e-library.git
+
 cd e-library
 
 Install dependencies:
 
 npm install
+
 npx prisma generate
 
 How to use authentication
@@ -34,14 +36,23 @@ Content-Type: application/json
 }
 
 Example Requests
+
 Get all books
+
 GET /books
+
 Get books with filter
+
 GET /books?title=Harry&year=1997
+
 Get a book by ID
+
 GET /books/1
+
 Create a new book
+
 POST /books
+
 Content-Type: application/json
 
 {
@@ -49,8 +60,11 @@ Content-Type: application/json
   "author": "F. Scott Fitzgerald",
   "year": 1925
 }
+
 Update a book
+
 PUT /books/1
+
 Content-Type: application/json
 
 {
@@ -58,6 +72,8 @@ Content-Type: application/json
   "author": "Updated Author",
   "year": 2022
 }
+
 Delete a book
+
 DELETE /books/1
 
