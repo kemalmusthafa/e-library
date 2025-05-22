@@ -29,7 +29,7 @@ npx prisma migrate dev
 # Start the development server
 npm run dev
 
-🔐 Authentication
+# 🔐 Authentication
 
 Register New User
 
@@ -76,27 +76,19 @@ json{
   }
 }
 
-📖 Book Management
+# 📖 Book Management
 
-Note: Include the JWT token in the Authorization header for protected routes:
-Authorization: Bearer your_jwt_token
-
-Get All Books
-
+**Get All Books**
 http GET /book
 
-Get Book by ID
-
+**Get Book by ID**
 http GET /book/1
 
-Create New Book
-
+**Create New Book**
 http POST /book
 
-Update Book
-
+**Update Book**
 http PUT /book/1
 
-Delete Book
-
+**Delete Book**
 http DELETE /book/1
