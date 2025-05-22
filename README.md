@@ -83,20 +83,20 @@ Authorization: Bearer your_jwt_token
 
 Get All Books
 
-http GET /books
+http GET /book
 
 Get Book by ID
 
-http GET /books/1
+http GET /book/1
 
 Create New Book
 
-http POST /books
+http POST /book
 
 Update Book
 
-http PUT /books/1
+http PUT /book/1
 
 Delete Book
 
-http DELETE /books/1
+http DELETE /book/1
