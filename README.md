@@ -1,22 +1,39 @@
-**Installation**
+# 📚 E-Library API
 
-Clone the repository:
+A modern, RESTful API for managing digital book collections with secure authentication and advanced filtering capabilities.
+
+🚀 Quick Start
+Prerequisites
+
+Node.js 16+
+npm or yarn
+Database (PostgreSQL/MySQL/SQLite)
+
+Installation
+
+bash# Clone the repository
 
 git clone https://github.com/kemalmusthafa/e-library.git
 
 cd e-library
 
-Install dependencies:
-
+# Install dependencies
 npm install
 
+# Generate Prisma client
 npx prisma generate
 
-How to use authentication
+# Run database migrations
+npx prisma migrate dev
 
-Register a new user:
+# Start the development server
+npm run dev
 
-POST /auth/register
+🔐 Authentication
+
+Register New User
+
+http POST /auth/register
 Content-Type: application/json
 
 {
@@ -25,9 +42,21 @@ Content-Type: application/json
   "name": "John Doe"
 }
 
-Login to get a token:
+Response:
 
-POST /auth/login
+json{
+  "success": true,
+  "message": "User registered successfully",
+  "user": {
+    "id": 1,
+    "email": "user@example.com",
+    "name": "John Doe"
+  }
+}
+
+Login
+http POST /auth/login
+
 Content-Type: application/json
 
 {
@@ -35,45 +64,39 @@ Content-Type: application/json
   "password": "password123"
 }
 
-Example Requests
+Response:
 
-Get all books
-
-GET /books
-
-Get books with filter
-
-GET /books?title=Harry&year=1997
-
-Get a book by ID
-
-GET /books/1
-
-Create a new book
-
-POST /books
-
-Content-Type: application/json
-
-{
-  "title": "The Great Gatsby",
-  "author": "F. Scott Fitzgerald",
-  "year": 1925
+json{
+  "success": true,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "user": {
+    "id": 1,
+    "email": "user@example.com",
+    "name": "John Doe"
+  }
 }
 
-Update a book
+📖 Book Management
 
-PUT /books/1
+Note: Include the JWT token in the Authorization header for protected routes:
+Authorization: Bearer your_jwt_token
 
-Content-Type: application/json
+Get All Books
 
-{
-  "title": "Updated Title",
-  "author": "Updated Author",
-  "year": 2022
-}
+http GET /books
 
-Delete a book
+Get Book by ID
 
-DELETE /books/1
+http GET /books/1
 
+Create New Book
+
+http POST /books
+
+Update Book
+
+http PUT /books/1
+
+Delete Book
+
+http DELETE /books/1
