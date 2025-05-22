@@ -3,7 +3,7 @@ Installation
 Clone the repository:
 
 git clone https://github.com/kemalmusthafa/e-library.git
-cd book-manager
+cd e-library
 
 Install dependencies:
 
